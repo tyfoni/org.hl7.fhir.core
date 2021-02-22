@@ -4044,7 +4044,8 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
     } else if (element.getType().equals("StructureDefinition")) {
       new StructureDefinitionValidator(context, timeTracker, fpe, wantCheckSnapshotUnchanged, xverManager).validateStructureDefinition(errors, element, stack);
     } else if (element.getType().equals("ValueSet")) {
-      new ValueSetValidator(context, timeTracker, this, xverManager).validateValueSet(errors, element, stack);
+// FUT - do not validate valueset as this fails when codesystem are not present
+//      new ValueSetValidator(context, timeTracker, this, xverManager).validateValueSet(errors, element, stack);
     }
   }
 
