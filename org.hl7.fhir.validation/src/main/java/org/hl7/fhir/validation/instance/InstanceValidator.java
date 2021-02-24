@@ -2743,6 +2743,9 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
   }
 
   private boolean isSuspiciousReference(String url) {
+    if (url.startsWith("#")) {
+      return false;
+    }
     if (!assumeValidRestReferences || url == null || Utilities.isAbsoluteUrl(url)) {
       return false;
     }
