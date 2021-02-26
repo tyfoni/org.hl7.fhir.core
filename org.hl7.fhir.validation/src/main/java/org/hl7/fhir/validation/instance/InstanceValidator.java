@@ -4197,7 +4197,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
         long t = System.nanoTime();
         // FUT1-4847 workaround problem with bundle resource being validated against base profile even if profile is present
         String profileUri = "http://hl7.org/fhir/StructureDefinition/" + resourceName;
-        Element meta = resource.getNamedChild(META);
+        Element meta = element.getNamedChild(META);
         if (meta != null) {
           List<Element> profiles = new ArrayList<Element>();
           meta.getNamedChildren("profile", profiles);
